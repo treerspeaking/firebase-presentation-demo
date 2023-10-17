@@ -1,6 +1,6 @@
 // Import necessary modules from your index file
 import { app, auth } from '../firebase';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useAuth } from '../context/Authcontext.jsx';
 import { useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -11,7 +11,7 @@ export default function LoginPage() {
   const passwordref = useRef();
   const { login } = useAuth();
   const navigate = useNavigate();
-
+  const [error, setError] = useState(null);
   async function handlesubmit(e) {
     e.preventDefault();
     try {
@@ -21,6 +21,7 @@ export default function LoginPage() {
 
     } catch (error) {
       console.log(error);
+      setError(error.message);
     }
   }
 
@@ -28,7 +29,8 @@ export default function LoginPage() {
   // Render the login forms
   return (
     <>
-      
+      <p className='display-4' >LOG IN</p>
+      {error && <p className="text-danger">{error}</p>} {/* Display error message */}
       <form className='login form-floating' onSubmit={handlesubmit}>
         <div class="form-floating">
           
@@ -44,7 +46,8 @@ export default function LoginPage() {
         
         <button type="submit" class="btn btn-primary">Submit</button>
         <br />
-        <small id="emailHelp" class="form-text text-muted">Tùng hứa sẽ không share ra mật khẩu của bạn ra đâu (≧▽≦q)</small>
+        <small id="emailHelp" class="form-text text-muted"></small>
+        <p>Don't have an account? <a href="/signup" class="link-info">Register here</a></p>
       </form>
       
     </>

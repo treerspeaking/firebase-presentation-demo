@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+.to-do-label
+{
+  padding: 100px;
+}
+.task-input
+{
+  display: block;
+  width: 75%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: black;
+  
+  appearance: none;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  position: relative;
+  left: 4em;
+  
+}

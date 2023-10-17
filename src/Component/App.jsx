@@ -15,43 +15,50 @@ export const AuthContext = React.createContext();
 export default function App() {
   return (
     <>
-    
+
       <AuthProvider>
-      <div class="bg-white border rounded-5">
-        <ul className='nav nav-pills nav-justified mb-3' >
-        <li class="nav-item" role="presentation">
-        <NavLink className='button' to='/'>Login</NavLink>
-        
-        <NavLink className='button' to='/signup'>SignUp</NavLink>
-        
-        
-        <NavLink className='button' to='/Todolist'>Todolist</NavLink>
-        </li>
-        </ul>
-        <Routes>
-          <Route path='/'
-            element={
-              <LoginSignUpRoute>
-                <Loginpage />
-              </LoginSignUpRoute>} />
-          <Route path='/signup'
-            element={
-              <LoginSignUpRoute>
-                <SignUppage />
-              </LoginSignUpRoute>
-            } />
-          <Route path='/Todolist'
-            element={
-              <PrivateRoute>
-                <FirestoreProvider>
-                  <ToDoList />
-                </FirestoreProvider>
-              </PrivateRoute>
-            } />
-        </Routes>
+        <div class="bg-white border rounded-5">
+          
+
+
+
+
+          {/* <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+            <li class="nav-item" role="presentation">
+              <NavLink className='nav-link active 'id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+      aria-controls="pills-login" aria-selected="true" to='/'>Login</NavLink>
+            </li>
+            <li class="nav-item" role="presentation">
+              <NavLink className='nav-link active ' id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
+      aria-controls="pills-login" aria-selected="true" to='/signup'>SignUp</NavLink>
+            </li>
+          </ul> */}
+
+
+          <Routes>
+            <Route path='/'
+              element={
+                <LoginSignUpRoute>
+                  <Loginpage />
+                </LoginSignUpRoute>} />
+            <Route path='/signup'
+              element={
+                <LoginSignUpRoute>
+                  <SignUppage />
+                </LoginSignUpRoute>
+              } />
+            <Route path='/Todolist'
+              element={
+                <PrivateRoute>
+                  <FirestoreProvider>
+                    <ToDoList />
+                  </FirestoreProvider>
+                </PrivateRoute>
+              } />
+          </Routes>
         </div>
       </AuthProvider>
-      
+
     </>
 
   )

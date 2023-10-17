@@ -27,7 +27,7 @@ body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  min-width: 100px;
   min-height: 100vh;
 }
 
@@ -47,6 +47,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  position: relative;
 }
 button:hover {
   border-color: #646cff;
@@ -68,7 +69,8 @@ button:focus-visible {
   cursor: pointer;
   transition: border-color 0.25s;
   position: relative;
-  top: 50px;;
+  top: 50px;
+    
 }
 .button:hover {
   border-color: #646cff;

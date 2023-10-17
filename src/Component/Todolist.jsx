@@ -36,18 +36,32 @@ function ToDoList() {
   // Add to do list item by updating the ToDoList state
   async function addItem() {
     const input = document.getElementById("item-add");
+    const newItem = input.value;
+    if(newItem.trim().length!=0 )
+    {
     const key = generateKey();
     const newToDoList = { 
       ...toDoList, 
-      [key]: input.value 
+      [key]: newItem, 
     };
-
-    setToDoList(newToDoList);
-    await setlist(newToDoList).catch((error) => {
-      console.log(error);
-    });
     
-    input.value = ''
+    setToDoList(newToDoList);
+    try {
+      // Save the updated list to an external data source using setlist
+      await setlist(newToDoList);
+
+      input.value = '';
+
+      // Fetch the updated to-do list and log it
+      const newlist = await getuserToDoList();
+      console.log(newlist.data());
+    } catch (error) {
+      console.log(error);
+    }
+  } else {
+    // Notify the user that the input is empty or perform any other desired action
+    console.log("Input cannot be empty.");
+  }
     
     // const newlist = await getuserToDoList();
     // console.log(newlist.data());
@@ -94,9 +108,14 @@ function ToDoList() {
   return (
     <>
       <div className='My To do list'>
-        <h1>To do thing: </h1>
-        <button onClick={addItem}>+</button>
-        <input type="text" id="item-add"></input>
+        <h1 className='to-do-label'>TO DO LIST</h1>
+        
+        <div className='form-group'>
+          
+          
+          <input type="text" class=" task-input" id="item-add" placeholder="Add a task"/>
+          <button className='btn btn-outline-primary' onClick={addItem}>Add</button>
+        </div>
         <ol>
           <ToDoItems toDoList={toDoList} deleteFunc={deleteItem} />
         </ol>
