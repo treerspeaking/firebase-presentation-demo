@@ -1,0 +1,18 @@
+<form className='login' onSubmit={handlesubmit}>
+        {/* <label htmlFor="email">Email: </label>
+        <input type="text" name="email" ref={emailref} />
+        <br /> */}
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">@</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" />
+        </div>
+        <br />
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="basic-addon1">#</span>
+          </div>
+          <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" />
+        </div>
+      </form>

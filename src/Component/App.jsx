@@ -8,16 +8,26 @@ import ToDoList from './Todolist';
 import { Route, Routes, NavLink } from 'react-router-dom';
 import PrivateRoute from '../route/PrivateRoute.jsx';
 import LoginSignUpRoute from '../route/loginsignupRoute.jsx';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 export const AuthContext = React.createContext();
 
 export default function App() {
   return (
     <>
+    
       <AuthProvider>
+      <div class="bg-white border rounded-5">
+        <ul className='nav nav-pills nav-justified mb-3' >
+        <li class="nav-item" role="presentation">
         <NavLink className='button' to='/'>Login</NavLink>
+        
         <NavLink className='button' to='/signup'>SignUp</NavLink>
+        
+        
         <NavLink className='button' to='/Todolist'>Todolist</NavLink>
+        </li>
+        </ul>
         <Routes>
           <Route path='/'
             element={
@@ -39,7 +49,10 @@ export default function App() {
               </PrivateRoute>
             } />
         </Routes>
+        </div>
       </AuthProvider>
+      
     </>
+
   )
 }

@@ -3,22 +3,23 @@ import { app, auth } from '../firebase';
 import { useRef } from 'react';
 import { useAuth } from '../context/Authcontext.jsx';
 import { useNavigate } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 // Define a functional component called Loginpage
 export default function LoginPage() {
   const emailref = useRef();
   const passwordref = useRef();
-  const {login} = useAuth();
+  const { login } = useAuth();
   const navigate = useNavigate();
 
-  async function handlesubmit(e){
+  async function handlesubmit(e) {
     e.preventDefault();
-    try{
+    try {
       await login(emailref.current.value, passwordref.current.value);
       console.log('login');
       navigate('/Todolist');
 
-    } catch (error){
+    } catch (error) {
       console.log(error);
     }
   }
@@ -27,16 +28,25 @@ export default function LoginPage() {
   // Render the login forms
   return (
     <>
-      <form className='login' onSubmit={handlesubmit}>
-        <label htmlFor="email">email: </label>
-        <input type="text" name="email" ref={emailref} />
+      
+      <form className='login form-floating' onSubmit={handlesubmit}>
+        <div class="form-floating">
+          
+          <input type="email" class="form-control" id="floatingInputGrid" aria-describedby="emailHelp" placeholder="name@example.com" ref={emailref}/>
+          <label htmlFor="email">Email address</label>
+        </div>
         <br />
-        <label htmlFor="password">password: </label>
-        <input type="text" name="password" ref={passwordref} />
+        <div class="form-floating">
+          
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ref={passwordref}/>
+          <label htmlFor="password">Password</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Submit</button>
         <br />
-        <button type='submit'>Log In</button>
-        <br />
+        <small id="emailHelp" class="form-text text-muted">Tùng hứa sẽ không share ra mật khẩu của bạn ra đâu (≧▽≦q)</small>
       </form>
+      
     </>
   );
 }

@@ -3,7 +3,8 @@ import { useAuth } from "../context/Authcontext.jsx";
 import { useNavigate } from "react-router-dom";
 import { app, auth } from '../firebase';
 import { useRef } from 'react';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap-grid.min.css';
 export default function SignUpPage() {
   const { signup } = useAuth();
   const navigate = useNavigate();
@@ -23,15 +24,22 @@ export default function SignUpPage() {
 
   return (
     <>
-      <form className='signup' onSubmit={handlesubmit}>
-        <label htmlFor="email">email: </label>
-        <input type="text" name="email" ref={emailref} />
+      <form className='signup form-floating' onSubmit={handlesubmit}>
+        <div class="form-floating">
+          
+          <input type="email" class="form-control" id="floatingInputGrid" aria-describedby="emailHelp" placeholder="name@example.com" ref={emailref}/>
+          <label htmlFor="email">Enter Email address</label>
+        </div>
         <br />
-        <label htmlFor="password">password: </label>
-        <input type="text" name="password" ref={passwordref} />
+        <div class="form-floating">
+          
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ref={passwordref}/>
+          <label htmlFor="password">Enter Password</label>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Sign Up!</button>
         <br />
-        <button type='submit'>Sign Up</button>
-        <br />
+        <small id="emailHelp" class="form-text text-muted">Tùng hứa sẽ không share ra mật khẩu của bạn ra đâu (≧▽≦q)</small>
       </form>
     </>
   );
