@@ -26,21 +26,21 @@ export default function SignUpPage() {
 
   return (
     <>
-      <p className="display-4">SIGN UP</p>
+      <p className="display-4 h1 m-2 p-1">SIGN UP</p>
       {error && <p className="text-danger">{error}</p>} {/* Display error message */}
       <form className='signup form-floating' onSubmit={handlesubmit}>
-        <div class="form-floating">
+        <div className="form-floating">
           <input type="email" class="form-control" id="floatingInputGrid"  placeholder="name@example.com" ref={emailref}/>
           <label htmlFor="email">Enter Email address</label>
         </div>
         <br />
-        <div class="form-floating">
+        <div className="form-floating">
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ref={passwordref}/>
           <label htmlFor="password">Enter Password</label>
         </div>
-        <button type="submit" class="btn btn-primary">Sign Up!</button>
+        <button type="submit" className="btn btn-primary">Sign Up!</button>
         <br />
-        <p>Already a user? <a href="/" class="link-info">Log In</a></p>
+        <p>Already a user? <a href="/" className="link-info">Log In</a></p>
       </form>
     </>
   );

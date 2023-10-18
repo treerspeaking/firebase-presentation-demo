@@ -29,24 +29,24 @@ export default function LoginPage() {
   // Render the login forms
   return (
     <>
-      <p className='display-4' >LOG IN</p>
+      <p className='display-4 m-2 p-1'>LOG IN</p>
       {error && <p className="text-danger">{error}</p>} {/* Display error message */}
       <form className='login form-floating' onSubmit={handlesubmit}>
-        <div class="form-floating">
+        <div className="form-floating">
           
-          <input type="email" class="form-control" id="floatingInputGrid" aria-describedby="emailHelp" placeholder="name@example.com" ref={emailref}/>
+          <input type="email" className="form-control" id="floatingInputGrid" aria-describedby="emailHelp" placeholder="name@example.com" ref={emailref}/>
           <label htmlFor="email">Email address</label>
         </div>
         <br />
-        <div class="form-floating">
+        <div className="form-floating">
           
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" ref={passwordref}/>
+          <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password" ref={passwordref}/>
           <label htmlFor="password">Password</label>
         </div>
         
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
         <br />
-        <small id="emailHelp" class="form-text text-muted"></small>
+        <small id="emailHelp" className="form-text text-muted"></small>
         <p>Don't have an account? <a href="/signup" class="link-info">Register here</a></p>
       </form>
       
