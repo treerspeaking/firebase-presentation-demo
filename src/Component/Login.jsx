@@ -2,7 +2,7 @@
 import { app, auth } from '../firebase';
 import { useRef, useState } from 'react';
 import { useAuth } from '../context/Authcontext.jsx';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/css/bootstrap-grid.min.css';
 // Define a functional component called Loginpage
@@ -47,7 +47,7 @@ export default function LoginPage() {
         <button type="submit" className="btn btn-primary">Submit</button>
         <br />
         <small id="emailHelp" className="form-text text-muted"></small>
-        <p>Don't have an account? <a href="/signup" class="link-info">Register here</a></p>
+        <p>Don't have an account? <NavLink href="/signup" className="link-info">Register here</NavLink></p>
       </form>
       
     </>

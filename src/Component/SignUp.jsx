@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuth } from "../context/Authcontext.jsx";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { app, auth } from '../firebase';
 import { useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -40,7 +40,7 @@ export default function SignUpPage() {
         </div>
         <button type="submit" className="btn btn-primary">Sign Up!</button>
         <br />
-        <p>Already a user? <a href="/" className="link-info">Log In</a></p>
+        <p>Already a user? <NavLink to="/" className="link-info">Log In</NavLink></p>
       </form>
     </>
   );

@@ -17,7 +17,7 @@ export default function App() {
     <>
 
       <AuthProvider>
-        <div class="bg-white border rounded-5">
+        <div className="bg-white border rounded-5">
           
 
 

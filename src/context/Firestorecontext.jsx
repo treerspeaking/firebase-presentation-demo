@@ -14,7 +14,6 @@ export const FirestoreProvider = ({ children }) => {
   const userDocRef = doc(db, 'users', currentUser.uid, 'ToDoList',`${currentUser.email}'s list`);
 
   function getuserToDoList() {
-
     return getDoc(userDocRef);
   }
 

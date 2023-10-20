@@ -11,7 +11,6 @@ const generateKey = () => {
 }
 
 function ToDoItems({ toDoList, deleteFunc }) {
-  console.log(toDoList)
   const list = Object.entries(toDoList).map(([key, value]) => {
     return (
       <li key={key}>
@@ -53,8 +52,8 @@ function ToDoList() {
       input.value = '';
 
       // Fetch the updated to-do list and log it
-      const newlist = await getuserToDoList();
-      console.log(newlist.data());
+      // const newlist = await getuserToDoList();
+      // console.log(newlist.data());
     } catch (error) {
       console.log(error);
     }
@@ -63,15 +62,10 @@ function ToDoList() {
     console.log("Input cannot be empty.");
   }
     
-    // const newlist = await getuserToDoList();
-    // console.log(newlist.data());
   }
 
   // Remove to do list item by filtering out the deleted item
   async function deleteItem(itemId) {
-    // setToDoList((prevToDoList) => {
-    //   prevToDoList.filter((item) => item !== itemToDelete)
-    // }); 
     delete toDoList[`${itemId}`];
     setToDoList({
       ...toDoList,
@@ -113,7 +107,7 @@ function ToDoList() {
         <div className='form-group'>
           
           
-          <input type="text" class=" task-input" id="item-add" placeholder="Add a task"/>
+          <input type="text" className=" task-input" id="item-add" placeholder="Add a task"/>
           <button className='btn btn-outline-primary' onClick={addItem}>Add</button>
         </div>
         <ol>
