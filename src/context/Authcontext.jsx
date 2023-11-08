@@ -7,7 +7,11 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 export const AuthContext = createContext();
-
+/// TODO list
+/// 1. Create a react Auth context and wrap all the app components in it
+/// 2. Create a handle login function that will handle the login process using the login function from the auth context
+/// 3. Create the Private Route component to push and handle the user login state and allow the user access to the main page
+/// 4. Celebrate
 export function useAuth() {
   return useContext(AuthContext)
 }
