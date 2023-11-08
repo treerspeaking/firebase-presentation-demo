@@ -36,17 +36,6 @@ export const FirestoreProvider = ({ children }) => {
     )
   }
 
-  // const [user, setUser] = useContext(AuthContext);
-  // const [db, setDb] = useState(null);
-
-  // useEffect(() => {
-  //   if (user) {
-  //     const firestore = require('firebase/firestore');
-  //     const db = firestore();
-  //     setDb(db);
-  //   }
-  // }, [user]);
-
   const value = {
     // db,
     getuserToDoList,

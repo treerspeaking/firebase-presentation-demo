@@ -18,23 +18,6 @@ export default function App() {
 
       <AuthProvider>
         <div className="bg-white border rounded-5">
-          
-
-
-
-
-          {/* <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
-            <li class="nav-item" role="presentation">
-              <NavLink className='nav-link active 'id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-      aria-controls="pills-login" aria-selected="true" to='/'>Login</NavLink>
-            </li>
-            <li class="nav-item" role="presentation">
-              <NavLink className='nav-link active ' id="tab-login" data-mdb-toggle="pill" href="#pills-login" role="tab"
-      aria-controls="pills-login" aria-selected="true" to='/signup'>SignUp</NavLink>
-            </li>
-          </ul> */}
-
-
           <Routes>
             <Route path='/'
               element={

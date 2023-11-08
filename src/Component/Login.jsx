@@ -47,7 +47,7 @@ export default function LoginPage() {
         <button type="submit" className="btn btn-primary">Submit</button>
         <br />
         <small id="emailHelp" className="form-text text-muted"></small>
-        <p>Don't have an account? <NavLink href="/signup" className="link-info">Register here</NavLink></p>
+        <p>Don't have an account? <NavLink to="/signup" className="link-info">Register here</NavLink></p>
       </form>
       
     </>
